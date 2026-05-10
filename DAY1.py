@@ -50,7 +50,7 @@ s1=s[:1]+"y"+s[1:]
 print(s1)
 
 #delete char form a string
-s="python"
+s="pthon"
 s1=s[:1]+s[1:]
 print(s1)
 
