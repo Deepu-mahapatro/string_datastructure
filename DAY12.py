@@ -31,6 +31,57 @@ def reverse_split(s):
     return ' '.join(result)
 print(reverse_split("I LOVE PYTHON"))
 
+#USING MANUAL REVERSE LOOP
+def reverse_words(s):
+    if s=="":
+        return ""
+    words=s.split()
+    result=[]
+    for word in words:
+        reversed_words=""
+        #REVERSE MANUALLY
+        for i in range(len(word)-1,-1,-1):
+            reversed_words+=word[i]
+        result.append(reversed_words)
+    return " ".join(result)
+print(reverse_words("I LOVE CODING"))
+
+#USING SPLIT AND REVERSE METHOD
+def reverse_words(s):
+    if s=="":
+        return ""
+    words=s.split()
+    result=[]
+    #REVERSE EACH WORD
+    for word in words:
+        result.append(word[::-1])
+    #JOIN ALL THE WORDS
+    return " ".join(result)
+print(reverse_words("I LOVE CODING"))
+
+#USING SLACK METHOD
+def reverse_words(s):
+    if s=="":
+        return ""
+    stack=[]
+    result=""
+    #TRAVERSE THE CHARACTERS
+    for char in s:
+        #IF NOT SPACE
+        if char!=" ":
+            stack .append(char)
+        #SPACE FOUND 
+        else:
+            #POP ALL TEH CHARACTERS 
+            while stack:
+                result+=stack.pop()
+            #ADD SPACE
+            result+=" "
+    while stack:
+        result+=stack.pop()
+    return result
+print(reverse_words("I LOVE CODING"))
+
 
 
 #LARGEST ODD NUMBER IN A STRING 
