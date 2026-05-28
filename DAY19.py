@@ -14,7 +14,7 @@
 def count_sub(s):
     #EDGE CASE: EMPTY STRING
     if s=="":
-        return ""
+        return 0
     #STORE TOTAL COUNT
     count=0
     #OUTER LOOP->START INDEX
@@ -23,7 +23,7 @@ def count_sub(s):
         for end in range(start,len(s)):
             count+=1
     return count
-s="abcd"
+s=""
 print(count_sub(s))
 
 #GENERATE ACTUAL SUBSTRING USING SLICING AND NESTED LOOPS
