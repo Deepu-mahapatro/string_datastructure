@@ -224,3 +224,28 @@ def is_anagram(s1,s2):
             return False
     return True
 print(is_anagram("silent","listen"))
+
+#MINIMUM REMOVE TO MAKE VALID PARENTHESIS
+def min_remove(s):
+    stack=[]
+    remove=set()
+    #FIRST PASS
+    for i,ch in enumerate(s):
+        if ch not in '()':
+            continue
+        elif ch=='(':
+            stack.append(i)
+        else:
+            if not stack:
+                remove.add(i)
+            else:
+                stack.pop()
+    remove=remove.union(set(stack))
+    result=[]
+        
+    for i,ch in enumerate(s):
+        if i not in remove:
+            result.append(ch)
+    return ''.join(result)
+s="lee(c(o)d)e)"
+print(min_remove(s))
